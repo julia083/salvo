@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/animaçaoperson.glb-927b11b8619ff51bf405711c4
 
 [params]
 
-nodes/root_type=""
+nodes/root_type="CharacterBody3D"
 nodes/root_name=""
 nodes/root_script=null
 mesh_library/use_node_names_as_mesh_names=false

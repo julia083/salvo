@@ -1,9 +1,10 @@
 [gd_scene format=3 uid="uid://d34r8t51qh5u1"]
 
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
-[ext_resource type="Script" uid="uid://db8iwyf1r7n72" path="res://bot_1.gd" id="2_0xm2m"]
 [ext_resource type="Script" uid="uid://c3i5g4db36ttd" path="res://bot_2.gd" id="3_1bvp3"]
+[ext_resource type="PackedScene" uid="uid://b18wr3btumfeh" path="res://animaçaoperson.tscn" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://wbk2px0jdhyr" path="res://bot_3.gd" id="4_lquwl"]
+[ext_resource type="Script" uid="uid://bt2mitojrhaol" path="res://animaçaoperson.gd" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://ui3un44k443a" path="res://addons/flag/scene.gltf" id="5_lquwl"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsfqu"]
@@ -38,14 +39,6 @@ albedo_color = Color(1, 1, 1, 0)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_ojeok"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ojeok"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h2yge"]
-albedo_color = Color(1, 0.64705884, 0.17254902, 1)
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_wfeq3"]
-material = SubResource("StandardMaterial3D_h2yge")
-
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wfeq3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
 albedo_color = Color(1, 0.7058824, 0.36078432, 1)
@@ -141,18 +134,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63054895, 0.49616766, 17.02
 
 [node name="bots" type="Node3D" parent="." unique_id=1201191231]
 
-[node name="bot1" type="CharacterBody3D" parent="bots" unique_id=1255519884]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11651611, -19.385595)
-script = ExtResource("2_0xm2m")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="bots/bot1" unique_id=527452525]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6218376, 2.2576241)
-mesh = SubResource("CapsuleMesh_wfeq3")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="bots/bot1" unique_id=863982423]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.615401, 2.2616339)
-shape = SubResource("CapsuleShape3D_wfeq3")
-
 [node name="bot2" type="CharacterBody3D" parent="bots" unique_id=1586176699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3655224, 1.4113579, -17.765854)
 script = ExtResource("3_1bvp3")
@@ -172,6 +153,10 @@ mesh = SubResource("CapsuleMesh_xsfqu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bots/bot3" unique_id=86099958]
 shape = SubResource("CapsuleShape3D_xsfqu")
+
+[node name="bot1" parent="bots" unique_id=1942468232 instance=ExtResource("4_7mycd")]
+transform = Transform3D(-0.98138386, 0, -0.19205652, 0, 1, 0, 0.19205652, 0, -0.98138386, 0, 0, -18.862993)
+script = ExtResource("5_272bh")
 
 [node name="bandeira" type="Node3D" parent="." unique_id=374513203]
 
