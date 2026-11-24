@@ -217,10 +217,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9077926, 7.394857, -23.013
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5220876, -5.3069286, 0)
 shape = SubResource("CapsuleShape3D_rob1n")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1145510669]
-transform = Transform3D(0.9739835, 0.18845166, 0.12586561, -0.027992915, -0.451105, 0.8920318, 0.22488348, -0.8723476, -0.43409348, 0, 11.5041065, -16.862614)
+[node name="luz_time_jogador" type="DirectionalLight3D" parent="." unique_id=1145510669]
+transform = Transform3D(0.9739835, 0.18845166, 0.12586561, -0.027992915, -0.451105, 0.8920318, 0.22488348, -0.8723476, -0.43409348, 0, 10.092688, -22.133898)
 
-[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=818042863]
+[node name="luz_time_bots" type="DirectionalLight3D" parent="." unique_id=818042863]
 transform = Transform3D(0.920338, -0.3903039, 0.025318906, 0.27436545, 0.6903786, 0.6694033, -0.27875033, -0.6091307, 0.74246764, 0, 10.605663, 23.915485)
 
 [editable path="jogadores/jogador_principal"]
