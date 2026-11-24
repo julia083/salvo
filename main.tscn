@@ -179,45 +179,48 @@ shape = SubResource("CapsuleShape3D_xsfqu")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.310092, 7.394857, 23.475954)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag1" unique_id=260119166]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4792547, -5.7197924, -0.17793846)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4792547, -5.26646, -0.17793846)
 shape = SubResource("CapsuleShape3D_a758i")
 
 [node name="flag2" parent="bandeira" unique_id=1799264141 instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3672125, 6.983869, 23.589716)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag2" unique_id=1161718048]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6178665, -5.2303877, 0.09425163)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6178665, -5.296067, 0.09425163)
 shape = SubResource("CapsuleShape3D_hbuda")
 
 [node name="flag3" parent="bandeira" unique_id=817384467 instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.151932, 7.394856, 22.8921)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag3" unique_id=754477142]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5270691, -5.365377, -0.037296295)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5270691, -5.329791, -0.037296295)
 shape = SubResource("CapsuleShape3D_hllrh")
 
 [node name="flag4" parent="bandeira" unique_id=1120748166 instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.115996, 7.3948607, -23.3891)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag4" unique_id=801127315]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5839977, -5.619239, -0.061431885)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5839977, -5.4348273, -0.061431885)
 shape = SubResource("CapsuleShape3D_0w0vj")
 
 [node name="flag5" parent="bandeira" unique_id=1830683423 instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5164295, 7.3948607, -23.22173)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag5" unique_id=1358599331]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5765269, -5.0733213, -0.5318203)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5765269, -5.390828, 0.040107727)
 shape = SubResource("CapsuleShape3D_ti6o5")
 
 [node name="flag6" parent="bandeira" unique_id=43272188 instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9077926, 7.394857, -23.013733)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag6" unique_id=1557465957]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5220876, -5.2663813, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5220876, -5.3069286, 0)
 shape = SubResource("CapsuleShape3D_rob1n")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1145510669]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 8.6753235, 0)
+transform = Transform3D(0.9739835, 0.18845166, 0.12586561, -0.027992915, -0.451105, 0.8920318, 0.22488348, -0.8723476, -0.43409348, 0, 11.5041065, -16.862614)
+
+[node name="DirectionalLight3D2" type="DirectionalLight3D" parent="." unique_id=818042863]
+transform = Transform3D(0.920338, -0.3903039, 0.025318906, 0.27436545, 0.6903786, 0.6694033, -0.27875033, -0.6091307, 0.74246764, 0, 10.605663, 23.915485)
 
 [editable path="jogadores/jogador_principal"]
