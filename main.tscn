@@ -155,7 +155,7 @@ mesh = SubResource("CapsuleMesh_xsfqu")
 shape = SubResource("CapsuleShape3D_xsfqu")
 
 [node name="bot1" parent="bots" unique_id=1942468232 instance=ExtResource("4_7mycd")]
-transform = Transform3D(-0.98138386, 0, -0.19205652, 0, 1, 0, 0.19205652, 0, -0.98138386, 0, 0, -18.862993)
+transform = Transform3D(-0.98138386, 0, -0.19205652, 0, 1, 0, 0.19205652, 0, -0.98138386, -0.08240491, 0.6006937, -16.877895)
 script = ExtResource("5_272bh")
 
 [node name="bandeira" type="Node3D" parent="." unique_id=374513203]

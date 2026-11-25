@@ -8,7 +8,11 @@
 [node name="animaçaoperson" unique_id=1942468232 instance=ExtResource("1_caei8")]
 script = ExtResource("2_fpk53")
 
-[node name="Skeleton3D" parent="Armature" parent_id_path=PackedInt32Array(1957943949) index="0" unique_id=1050993174]
+[node name="Armature" parent="." index="0" unique_id=1798762191]
+transform = Transform3D(-0.009574545, -0.002885843, 0, 0, 0, -0.01, 0.002885843, -0.009574545, 0, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=1531973558]
+transform = Transform3D(0.912688, -0.4086573, 0, 0.4086573, 0.912688, 0, 0, 0, 1, 0, 0, 0)
 bones/0/position = Vector3(0.301312, -1.4979734, -80.39804)
 bones/0/rotation = Quaternion(-0.7007565, 0.009193736, -0.023834735, 0.712943)
 bones/1/position = Vector3(14.649878, -7.4854345, 0.80283)
