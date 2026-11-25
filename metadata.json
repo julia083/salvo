@@ -1,0 +1,6 @@
+{
+  "name": "Salvo — Auxiliary Players Flag Capture",
+  "description": "Godot 4 Capture-the-Flag auxiliary player AI (jogador_aux_1 & jogador_aux_2) and interactive 3D field simulation for julia083/salvo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
