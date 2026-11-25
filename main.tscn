@@ -175,7 +175,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6178665, -5.296067, 0.0942
 shape = SubResource("CapsuleShape3D_hbuda")
 
 [node name="flag3" parent="bandeira" unique_id=817384467 instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.151932, 7.394856, 22.8921)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.151932, 7.394856, 23.869085)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag3" unique_id=754477142]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5270691, -5.329791, -0.037296295)
