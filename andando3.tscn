@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://w5bbiwvo2iby"]
+
+[ext_resource type="PackedScene" uid="uid://dnoendc1ssl0p" path="res://modelsp/animaçaoperson.glb" id="1_mv1c7"]
+
+[node name="animaçaoperson" unique_id=1208271461 instance=ExtResource("1_mv1c7")]
+transform = Transform3D(-0.9153612, 0, 0.4026336, 0, 1, 0, -0.4026336, 0, -0.9153612, 0, 0, 0)

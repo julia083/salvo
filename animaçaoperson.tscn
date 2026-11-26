@@ -6,12 +6,13 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_wfeq3"]
 
 [node name="animaçaoperson" unique_id=1942468232 instance=ExtResource("1_caei8")]
+transform = Transform3D(-0.9765648, 0, -0.21522352, 0, 1, 0, 0.21522352, 0, -0.9765648, 0, 0, 0)
 script = ExtResource("2_fpk53")
 
-[node name="Armature" parent="." index="0" unique_id=1798762191]
-transform = Transform3D(-0.009574545, -0.002885843, 0, 0, 0, -0.01, 0.002885843, -0.009574545, 0, 0, 0, 0)
+[node name="Armature" parent="." index="0" unique_id=360615859]
+transform = Transform3D(-0.009993767, -0.00035302783, 0, 0, 0, -0.01, 0.00035302783, -0.009993767, 0, 0, 0, 0)
 
-[node name="Skeleton3D" parent="Armature" index="0" unique_id=1531973558]
+[node name="Skeleton3D" parent="Armature" index="0" unique_id=1537751417]
 transform = Transform3D(0.912688, -0.4086573, 0, 0.4086573, 0.912688, 0, 0, 0, 1, 0, 0, 0)
 bones/0/position = Vector3(0.301312, -1.4979734, -80.39804)
 bones/0/rotation = Quaternion(-0.7007565, 0.009193736, -0.023834735, 0.712943)
@@ -126,6 +127,9 @@ bones/63/position = Vector3(0.44651175, 4.4867067, -3.5260673e-06)
 bones/63/rotation = Quaternion(-7.2190654e-05, 0.0018380021, -0.13786507, 0.9904494)
 bones/64/position = Vector3(-0.6581919, 3.6708152, 5.4836273e-06)
 
+[node name="Cilindro" parent="Armature/Skeleton3D" index="0" unique_id=459755631]
+transform = Transform3D(0.9999822, 0.0060020685, 0, -0.0060020685, 0.9999822, 0, 0, 0, 1, 0, 0, 0)
+
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="2" unique_id=669855113]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.0844021, 0)
+transform = Transform3D(-0.969966, 0, 0.24324054, 0, 1, 0, -0.24324054, 0, -0.969966, 0, 1.0844021, 0)
 shape = SubResource("CapsuleShape3D_wfeq3")

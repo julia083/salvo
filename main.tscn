@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://dwnoste46wosl" path="res://modelsp/andando.fbx" id="3_dg77c"]
 [ext_resource type="PackedScene" uid="uid://b18wr3btumfeh" path="res://animaçaoperson.tscn" id="4_7mycd"]
 [ext_resource type="Script" uid="uid://wbk2px0jdhyr" path="res://bot_3.gd" id="4_lquwl"]
-[ext_resource type="Script" uid="uid://bt2mitojrhaol" path="res://animaçaoperson.gd" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://ui3un44k443a" path="res://addons/flag/scene.gltf" id="5_lquwl"]
 [ext_resource type="PackedScene" uid="uid://dnoendc1ssl0p" path="res://modelsp/animaçaoperson.glb" id="6_4c57u"]
 [ext_resource type="Script" uid="uid://b0jfg1o6v61lm" path="res://jogador_aux_2.gd" id="7_aux02"]
@@ -99,9 +98,10 @@ size = Vector3(1, 6, 25)
 material = SubResource("StandardMaterial3D_ojeok")
 
 [node name="jogadores" type="Node3D" parent="." unique_id=673646932]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2525997, 0, 0)
 
 [node name="jogador_aux_1" type="CharacterBody3D" parent="jogadores" unique_id=2012810355]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.841366, 1.5117397, 17.1435)
+transform = Transform3D(-0.9985868, 0, -0.05314578, 0, 1, 0, 0.05314578, 0, -0.9985868, 8.841366, 1.5117397, 17.1435)
 script = ExtResource("1_efxa6")
 velocidade = 4.2
 
@@ -116,7 +116,7 @@ metadata/_custom_type_script = "uid://tuoleb80fbq7"
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8545041, 0)
 
 [node name="jogador_aux_2" type="CharacterBody3D" parent="jogadores" unique_id=758653922]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8239, 1.576613, 17.113796)
+transform = Transform3D(-0.9988505, 0, 0.047934126, 0, 1, 0, -0.047934126, 0, -0.9988505, -6.8239, 1.576613, 17.113796)
 script = ExtResource("7_aux02")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="jogadores/jogador_aux_2" unique_id=957563118]
@@ -130,10 +130,16 @@ script = ExtResource("7_efxa6")
 metadata/_custom_type_script = "uid://tuoleb80fbq7"
 
 [node name="jogador_principal" parent="jogadores" unique_id=2053236187 instance=ExtResource("1_ig7tw")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63054895, 0.49616766, 17.023968)
+transform = Transform3D(-0.99965596, 0, 0.026228368, 0, 1, 0, -0.026228368, 0, -0.99965596, 0.63054895, 0.49616766, 17.023968)
 
 [node name="Mesh" parent="jogadores/jogador_principal" index="0" unique_id=748284704]
 visible = false
+
+[node name="Collider" parent="jogadores/jogador_principal" index="1" unique_id=863497596]
+transform = Transform3D(0.20330688, 0, -0.97911507, 0, 1, 0, 0.97911507, 0, 0.20330688, 0, 0.9, 0)
+
+[node name="Head" parent="jogadores/jogador_principal" index="2" unique_id=1538567636]
+transform = Transform3D(-0.999206, 0, 0.039839737, 0, 1, 0, -0.039839737, 0, -0.999206, 0, 1.7, 0)
 
 [node name="Equipe" type="Node" parent="jogadores/jogador_principal" unique_id=414762747]
 script = ExtResource("7_efxa6")
@@ -142,15 +148,17 @@ metadata/_custom_type_script = "uid://tuoleb80fbq7"
 [node name="animaçaoperson" parent="jogadores/jogador_principal" unique_id=410016758 instance=ExtResource("6_4c57u")]
 
 [node name="bots" type="Node3D" parent="." unique_id=1201191231]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3795395, 0, 0)
 
 [node name="bot2" type="CharacterBody3D" parent="bots" unique_id=1586176699]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.3655224, 1.4113579, -17.765854)
 script = ExtResource("3_1bvp3")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bots/bot2" unique_id=1798401541]
+transform = Transform3D(-0.98475087, 0, 0.17397043, 0, 1, 0, -0.17397043, 0, -0.98475087, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_lkbxi")
 
-[node name="andando" parent="bots/bot2" unique_id=698990158 instance=ExtResource("3_dg77c")]
+[node name="andandoBot2" parent="bots/bot2" unique_id=698990158 instance=ExtResource("3_dg77c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7172847, 0)
 
 [node name="Equipe" type="Node" parent="bots/bot2" unique_id=1303516920]
@@ -163,58 +171,60 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3346076, 1.7948885, -17.50
 script = ExtResource("4_lquwl")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bots/bot3" unique_id=86099958]
+transform = Transform3D(-0.92599934, 0, -0.37752518, 0, 1, 0, 0.37752518, 0, -0.92599934, 0, 0, 0)
 shape = SubResource("CapsuleShape3D_xsfqu")
 
-[node name="animaçaoperson" parent="bots/bot3" unique_id=1106648790 instance=ExtResource("6_4c57u")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.70455885, 0)
+[node name="andandoBot3" parent="bots/bot3" unique_id=1106648790 instance=ExtResource("6_4c57u")]
+transform = Transform3D(0.9916926, 0, 0.12863043, 0, 1, 0, -0.12863043, 0, 0.9916926, 0, -0.70455885, 0)
 
 [node name="Equipe" type="Node" parent="bots/bot3" unique_id=951531452]
 script = ExtResource("7_efxa6")
 time = 1
 
 [node name="bot1" parent="bots" unique_id=1942468232 instance=ExtResource("4_7mycd")]
-transform = Transform3D(-0.98138386, 0, -0.19205652, 0, 1, 0, 0.19205652, 0, -0.98138386, -0.08240491, 0.6006937, -16.877895)
-script = ExtResource("5_272bh")
+transform = Transform3D(-0.91693246, 0, -0.39904246, 0, 1, 0, 0.39904246, 0, -0.91693246, -0.08240491, 0.6006937, -16.877895)
+script = null
 
 [node name="bandeira" type="Node3D" parent="." unique_id=374513203]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3006525, -2.8454766, 0)
 
 [node name="flag1" parent="bandeira" unique_id=1663578617 instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.310092, 7.394857, 23.475954)
+transform = Transform3D(0.5808855, 0, 0, 0, 0.5288796, 0, 0, 0, 0.5955607, -7.310092, 6.7750854, 23.475954)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag1" unique_id=260119166]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4792547, -5.26646, -0.17793846)
 shape = SubResource("CapsuleShape3D_a758i")
 
 [node name="flag2" parent="bandeira" unique_id=1799264141 instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3672125, 6.983869, 23.589716)
+transform = Transform3D(0.6282426, 0, 0, 0, 0.5411577, 0, 0, 0, 0.6153034, 1.3672125, 6.8051066, 23.589716)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag2" unique_id=1161718048]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6178665, -5.296067, 0.09425163)
 shape = SubResource("CapsuleShape3D_hbuda")
 
 [node name="flag3" parent="bandeira" unique_id=817384467 instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.151932, 7.394856, 23.869085)
+transform = Transform3D(0.63481694, 0, 0, 0, 0.55582064, 0, 0, 0, 0.6684593, 10.151932, 6.8893356, 23.869085)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag3" unique_id=754477142]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5270691, -5.329791, -0.037296295)
 shape = SubResource("CapsuleShape3D_hllrh")
 
 [node name="flag4" parent="bandeira" unique_id=1120748166 instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.115996, 7.3948607, -23.3891)
+transform = Transform3D(0.70111275, 0, 0, 0, 0.59845614, 0, 0, 0, 0.7186829, 9.115996, 7.1486716, -23.3891)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag4" unique_id=801127315]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5839977, -5.4348273, -0.061431885)
 shape = SubResource("CapsuleShape3D_0w0vj")
 
 [node name="flag5" parent="bandeira" unique_id=1830683423 instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.5164295, 7.3948607, -23.22173)
+transform = Transform3D(0.75674033, 0, 0, 0, 0.65187836, 0, 0, 0, 0.62247896, 1.4881703, 7.5143886, -23.22173)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag5" unique_id=1358599331]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5765269, -5.390828, 0.040107727)
 shape = SubResource("CapsuleShape3D_ti6o5")
 
 [node name="flag6" parent="bandeira" unique_id=43272188 instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.9077926, 7.394857, -23.013733)
+transform = Transform3D(0.7637414, 0, 0, 0, 0.59703994, 0, 0, 0, 0.6236213, -6.9077926, 7.1249995, -23.013733)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag6" unique_id=1557465957]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5220876, -5.3069286, 0)

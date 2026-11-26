@@ -5,7 +5,8 @@ extends CharacterBody3D
 @export var nome_animacao_andar: String = "" # Preencha aqui ou no Inspetor com o nome exato da animação
 
 # Referência única ao nó AnimationPlayer filho deste CharacterBody3D
-@onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var anim_player: AnimationPlayer = $jogadores
+
 
 var alvo_atual: Node3D = null
 
