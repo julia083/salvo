@@ -6,6 +6,8 @@
 [ext_resource type="Script" uid="uid://wbk2px0jdhyr" path="res://bot_3.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://bt2mitojrhaol" path="res://animaçaoperson.gd" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://ui3un44k443a" path="res://addons/flag/scene.gltf" id="5_lquwl"]
+[ext_resource type="Script" path="res://jogador_aux_1.gd" id="6_aux01"]
+[ext_resource type="Script" path="res://jogador_aux_2.gd" id="7_aux02"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsfqu"]
 albedo_color = Color(0.21568628, 0.23921569, 0.019607844, 1)
@@ -113,6 +115,7 @@ material = SubResource("StandardMaterial3D_ojeok")
 
 [node name="jogador_aux_1" type="CharacterBody3D" parent="jogadores" unique_id=2012810355]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.841366, 1.5117397, 17.1435)
+script = ExtResource("6_aux01")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="jogadores/jogador_aux_1" unique_id=1591507109]
 mesh = SubResource("CapsuleMesh_ja7cm")
@@ -122,6 +125,7 @@ shape = SubResource("CapsuleShape3D_ja7cm")
 
 [node name="jogador_aux_2" type="CharacterBody3D" parent="jogadores" unique_id=758653922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8239, 1.8798547, 17.113796)
+script = ExtResource("7_aux02")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="jogadores/jogador_aux_2" unique_id=2122461342]
 mesh = SubResource("CapsuleMesh_ojeok")
@@ -155,7 +159,7 @@ mesh = SubResource("CapsuleMesh_xsfqu")
 shape = SubResource("CapsuleShape3D_xsfqu")
 
 [node name="bot1" parent="bots" unique_id=1942468232 instance=ExtResource("4_7mycd")]
-transform = Transform3D(-0.98138386, 0, -0.19205652, 0, 1, 0, 0.19205652, 0, -0.98138386, 0, 0, -18.862993)
+transform = Transform3D(-0.98138386, 0, -0.19205652, 0, 1, 0, 0.19205652, 0, -0.98138386, -0.08240491, 0.6006937, -16.877895)
 script = ExtResource("5_272bh")
 
 [node name="bandeira" type="Node3D" parent="." unique_id=374513203]
@@ -175,7 +179,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6178665, -5.296067, 0.0942
 shape = SubResource("CapsuleShape3D_hbuda")
 
 [node name="flag3" parent="bandeira" unique_id=817384467 instance=ExtResource("5_lquwl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.151932, 7.394856, 22.8921)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.151932, 7.394856, 23.869085)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bandeira/flag3" unique_id=754477142]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.5270691, -5.329791, -0.037296295)
