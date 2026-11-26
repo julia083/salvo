@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://d2hanrqf76jee"]
+
+[ext_resource type="PackedScene" uid="uid://dnoendc1ssl0p" path="res://modelsp/animaçaoperson.glb" id="1_5r4h5"]
+
+[node name="animaçaoperson" unique_id=1942468232 instance=ExtResource("1_5r4h5")]
