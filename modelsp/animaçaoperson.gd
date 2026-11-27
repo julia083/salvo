@@ -12,6 +12,12 @@ func _physics_process(delta):
 	else:
 		velocity.y = 0
 
+	if has_meta("congelado") and get_meta("congelado"):
+		velocity.x = 0.0
+		velocity.z = 0.0
+		move_and_slide()
+		return
+
 	# Atualiza para encontrar o jogador mais próximo na cena inteira
 	alvo_atual = encontrar_jogador_mais_proximo()
 
@@ -33,8 +39,8 @@ func _physics_process(delta):
 			velocity.x = move_toward(velocity.x, 0, velocidade)
 			velocity.z = move_toward(velocity.z, 0, velocidade)
 	else:
-		velocity.x = move_toward(velocidade, 0, velocidade)
-		velocity.z = move_toward(velocidade, 0, velocidade)
+		velocity.x = move_toward(velocity.x, 0, velocidade)
+		velocity.z = move_toward(velocity.z, 0, velocidade)
 
 	move_and_slide()
 
@@ -50,7 +56,7 @@ func encontrar_jogador_mais_proximo() -> Node3D:
 	var menor_distancia: float = INF
 	
 	for jogador in lista_jogadores:
-		if jogador is Node3D:
+		if jogador is Node3D and jogador != self and not (jogador.has_meta("congelado") and jogador.get_meta("congelado")):
 			# Usa a distância real no mundo 3D (global_position)
 			var distancia = global_position.distance_to(jogador.global_position)
 			if distancia < menor_distancia:

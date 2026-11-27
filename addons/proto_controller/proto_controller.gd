@@ -21,6 +21,16 @@ func _ready() -> void:
 			bandeira.lock_rotation = true
 
 func _physics_process(delta):
+	if has_meta("congelado") and get_meta("congelado"):
+		velocity.x = 0.0
+		velocity.z = 0.0
+		if not is_on_floor():
+			velocity.y -= gravidade * delta
+		else:
+			velocity.y = 0.0
+		move_and_slide()
+		return
+
 	var z_anterior := global_position.z
 
 	# Captura as teclas de movimentação

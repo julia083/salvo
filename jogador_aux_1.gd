@@ -24,6 +24,12 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = 0.0
 
+	if has_meta("congelado") and get_meta("congelado"):
+		velocity.x = 0.0
+		velocity.z = 0.0
+		move_and_slide()
+		return
+
 	if estado == Estado.BUSCANDO_BANDEIRA:
 		_processar_busca()
 	else:
@@ -112,7 +118,7 @@ func _calcular_vetor_evasao_bots() -> Vector3:
 
 	var evasao := Vector3.ZERO
 	for bot in no_bots.get_children():
-		if bot is Node3D:
+		if bot is Node3D and not (bot.has_meta("congelado") and bot.get_meta("congelado")):
 			var diferenca: Vector3 = global_position - bot.global_position
 			diferenca.y = 0.0
 			var distancia := diferenca.length()
@@ -130,8 +136,8 @@ func encontrar_bandeira_inimiga() -> Node3D:
 	for bandeira in no_bandeiras.get_children():
 		if not (bandeira is Node3D) or not _bandeira_disponivel(bandeira):
 			continue
-		var reservada_por = bandeira.get_meta("reservada_por", null)
-		if is_instance_valid(reservada_por) and reservada_por != self:
+		var reservada_por = bandeira.get_meta("reservada_por") if bandeira.has_meta("reservada_por") else null
+		if is_instance_valid(reservada_por) and reservada_por != self and not (reservada_por.has_meta("congelado") and reservada_por.get_meta("congelado")):
 			continue
 		var distancia := global_position.distance_to(obter_posicao_bandeira(bandeira))
 		if distancia < menor_distancia:
@@ -145,9 +151,9 @@ func encontrar_bandeira_inimiga() -> Node3D:
 func _bandeira_disponivel(bandeira: Node3D) -> bool:
 	if not is_instance_valid(bandeira) or bandeira.name not in ["flag4", "flag5", "flag6"]:
 		return false
-	if bandeira.get_meta("capturada", false):
+	if bandeira.has_meta("capturada") and bandeira.get_meta("capturada"):
 		return false
-	var carregador = bandeira.get_meta("carregada_por", null)
+	var carregador = bandeira.get_meta("carregada_por") if bandeira.has_meta("carregada_por") else null
 	if is_instance_valid(carregador) and carregador != self:
 		return false
 	var principal := get_tree().root.find_child("jogador_principal", true, false)
@@ -199,5 +205,5 @@ func _atualizar_posicao_bandeira() -> void:
 		bandeira_carregada.global_position = global_position + Vector3(0.0, 0.5, 0.0) + offset_visual_bandeira
 
 func _liberar_reserva(bandeira: Node3D) -> void:
-	if is_instance_valid(bandeira) and bandeira.get_meta("reservada_por", null) == self:
+	if is_instance_valid(bandeira) and bandeira.has_meta("reservada_por") and bandeira.get_meta("reservada_por") == self:
 		bandeira.remove_meta("reservada_por")

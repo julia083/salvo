@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://d34r8t51qh5u1"]
 
-[ext_resource type="Script" uid="uid://cj453it2cgld6" path="res://modelsp/animaçaoperson.gd" id="1_efxa6"]
+[ext_resource type="Script" uid="uid://l0kvk61jctum" path="res://jogador_aux_1.gd" id="1_efxa6"]
 [ext_resource type="PackedScene" uid="uid://bs72ogkvdd7d6" path="res://addons/proto_controller/proto_controller.tscn" id="1_ig7tw"]
 [ext_resource type="Script" uid="uid://c3i5g4db36ttd" path="res://bot_2.gd" id="3_1bvp3"]
 [ext_resource type="PackedScene" uid="uid://dwnoste46wosl" path="res://modelsp/andando.fbx" id="3_dg77c"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dnoendc1ssl0p" path="res://modelsp/animaçaoperson.glb" id="6_4c57u"]
 [ext_resource type="Script" uid="uid://b0jfg1o6v61lm" path="res://jogador_aux_2.gd" id="7_aux02"]
 [ext_resource type="Script" uid="uid://tuoleb80fbq7" path="res://equipe.gd" id="7_efxa6"]
+[ext_resource type="Script" path="res://congelamento.gd" id="8_cong"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsfqu"]
 albedo_color = Color(0.21568628, 0.23921569, 0.019607844, 1)
@@ -115,6 +116,9 @@ metadata/_custom_type_script = "uid://tuoleb80fbq7"
 [node name="andando" parent="jogadores/jogador_aux_1" unique_id=1070791560 instance=ExtResource("3_dg77c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8545041, 0)
 
+[node name="Congelamento" type="Node" parent="jogadores/jogador_aux_1" unique_id=2012810356]
+script = ExtResource("8_cong")
+
 [node name="jogador_aux_2" type="CharacterBody3D" parent="jogadores" unique_id=758653922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8239, 1.576613, 17.113796)
 script = ExtResource("7_aux02")
@@ -129,6 +133,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8646636, 0)
 script = ExtResource("7_efxa6")
 metadata/_custom_type_script = "uid://tuoleb80fbq7"
 
+[node name="Congelamento" type="Node" parent="jogadores/jogador_aux_2" unique_id=758653923]
+script = ExtResource("8_cong")
+
 [node name="jogador_principal" parent="jogadores" unique_id=2053236187 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63054895, 0.49616766, 17.023968)
 
@@ -140,6 +147,9 @@ script = ExtResource("7_efxa6")
 metadata/_custom_type_script = "uid://tuoleb80fbq7"
 
 [node name="animaçaoperson" parent="jogadores/jogador_principal" unique_id=410016758 instance=ExtResource("6_4c57u")]
+
+[node name="Congelamento" type="Node" parent="jogadores/jogador_principal" unique_id=2053236188]
+script = ExtResource("8_cong")
 
 [node name="bots" type="Node3D" parent="." unique_id=1201191231]
 
@@ -158,6 +168,9 @@ script = ExtResource("7_efxa6")
 time = 1
 metadata/_custom_type_script = "uid://tuoleb80fbq7"
 
+[node name="Congelamento" type="Node" parent="bots/bot2" unique_id=1586176700]
+script = ExtResource("8_cong")
+
 [node name="bot3" type="CharacterBody3D" parent="bots" unique_id=1077571945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3346076, 1.7948885, -17.507137)
 script = ExtResource("4_lquwl")
@@ -172,9 +185,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.70455885, 0)
 script = ExtResource("7_efxa6")
 time = 1
 
+[node name="Congelamento" type="Node" parent="bots/bot3" unique_id=1077571946]
+script = ExtResource("8_cong")
+
 [node name="bot1" parent="bots" unique_id=1942468232 instance=ExtResource("4_7mycd")]
 transform = Transform3D(-0.98138386, 0, -0.19205652, 0, 1, 0, 0.19205652, 0, -0.98138386, -0.08240491, 0.6006937, -16.877895)
 script = ExtResource("5_272bh")
+
+[node name="Equipe" type="Node" parent="bots/bot1" unique_id=1942468233]
+script = ExtResource("7_efxa6")
+time = 1
+
+[node name="Congelamento" type="Node" parent="bots/bot1" unique_id=1942468234]
+script = ExtResource("8_cong")
 
 [node name="bandeira" type="Node3D" parent="." unique_id=374513203]
 
