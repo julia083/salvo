@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://csy06q4jw7uqn"]
+
+[ext_resource type="PackedScene" uid="uid://dwnoste46wosl" path="res://modelsp/andando.fbx" id="1_kww02"]
+
+[node name="andando" unique_id=1866260854 instance=ExtResource("1_kww02")]
+transform = Transform3D(-0.9999702, 0, 0.007721975, 0, 1, 0, -0.007721975, 0, -0.9999702, 0, 0, 0)
