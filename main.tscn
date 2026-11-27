@@ -12,6 +12,8 @@
 [ext_resource type="Script" uid="uid://b0jfg1o6v61lm" path="res://jogador_aux_2.gd" id="7_aux02"]
 [ext_resource type="Script" uid="uid://tuoleb80fbq7" path="res://equipe.gd" id="7_efxa6"]
 [ext_resource type="Script" uid="uid://dtokexgflllre" path="res://congelamento.gd" id="8_cong"]
+[ext_resource type="Script" path="res://gerenciador_bandeiras.gd" id="9_bandeiras"]
+[ext_resource type="Script" path="res://placar_bandeiras.gd" id="10_placar"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsfqu"]
 albedo_color = Color(0.21568628, 0.23921569, 0.019607844, 1)
@@ -216,6 +218,7 @@ script = ExtResource("8_cong")
 
 [node name="bandeira" type="Node3D" parent="." unique_id=374513203]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3006525, -2.8454766, 0)
+script = ExtResource("9_bandeiras")
 
 [node name="flag1" parent="bandeira" unique_id=1663578617 instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.310092, 6.7750854, 23.475954)
@@ -264,5 +267,20 @@ transform = Transform3D(0.9739835, 0.18845166, 0.12586561, -0.027992915, -0.4511
 
 [node name="luz_time_bots" type="DirectionalLight3D" parent="." unique_id=818042863]
 transform = Transform3D(0.920338, -0.3903039, 0.025318906, 0.27436545, 0.6903786, 0.6694033, -0.27875033, -0.6091307, 0.74246764, 0, 10.605663, 23.915485)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("10_placar")
+
+[node name="Placar" type="RichTextLabel" parent="HUD"]
+anchor_right = 1.0
+offset_top = 12.0
+offset_bottom = 62.0
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+mouse_filter = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "[center][font_size=26][b][color=#ff5555]VERMELHO: 0[/color]    [color=#6699ff]AZUL: 0[/color][/b][/font_size][/center]"
 
 [editable path="jogadores/jogador_principal"]

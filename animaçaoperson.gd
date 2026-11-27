@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var distancia_interacao: float = 1.4
 
 var alvo_atual: Node3D = null
+var direcao_patrulha: float = 1.0
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -32,8 +33,7 @@ func _physics_process(delta: float) -> void:
 			velocity.z = direcao.z * velocidade
 			look_at(global_position + direcao, Vector3.UP)
 	else:
-		velocity.x = move_toward(velocity.x, 0.0, velocidade)
-		velocity.z = move_toward(velocity.z, 0.0, velocidade)
+		_patrulhar_sem_alvo()
 
 	move_and_slide()
 
@@ -69,3 +69,11 @@ func _interagir_com_alvo(alvo: Node3D) -> void:
 		componente.descongelar()
 	else:
 		componente.congelar()
+
+func _patrulhar_sem_alvo() -> void:
+	if global_position.x >= 10.5:
+		direcao_patrulha = -1.0
+	elif global_position.x <= -10.5:
+		direcao_patrulha = 1.0
+	velocity.x = direcao_patrulha * velocidade
+	velocity.z = 0.0

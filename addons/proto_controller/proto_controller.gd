@@ -41,8 +41,18 @@ func _physics_process(delta):
         "mover_tras"
 	)
 
-	# Calcula a direção
-	var direcao = (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
+	# Usa a orientação horizontal da câmera; a rotação inicial do corpo é oposta
+	# à da câmera e inverteria os comandos ao usar transform.basis.
+	var direcao_base := Vector3(input_dir.x, 0.0, input_dir.y)
+	var camera := get_node_or_null("Head/Camera3D") as Camera3D
+	if camera:
+		var camera_direita: Vector3 = camera.global_basis.x
+		var camera_tras: Vector3 = camera.global_basis.z
+		camera_direita.y = 0.0
+		camera_tras.y = 0.0
+		if camera_direita.length_squared() > 0.001 and camera_tras.length_squared() > 0.001:
+			direcao_base = camera_direita.normalized() * input_dir.x + camera_tras.normalized() * input_dir.y
+	var direcao := direcao_base.normalized()
 
 	# Movimenta o personagem
 	if direcao:
@@ -64,7 +74,11 @@ func _atualizar_bandeira(z_anterior: float) -> void:
 	if is_instance_valid(bandeira_carregada):
 		# A linha central separa os campos: o lado aliado fica em z >= 0.
 		if z_anterior < 0.0 and global_position.z >= 0.0:
-			bandeira_carregada.queue_free()
+			var gerenciador := bandeira_carregada.get_parent()
+			if gerenciador and gerenciador.has_method("capturar_bandeira"):
+				gerenciador.call("capturar_bandeira", bandeira_carregada)
+			else:
+				bandeira_carregada.queue_free()
 			bandeira_carregada = null
 			return
 

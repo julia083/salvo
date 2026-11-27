@@ -102,6 +102,16 @@ func _mover_para(destino: Vector3) -> void:
 	velocity.z = direcao.z * velocidade
 	look_at(global_position + direcao, Vector3.UP)
 
+func _patrulhar_sem_bandeira() -> void:
+	var evasao := _calcular_vetor_evasao_bots()
+	if evasao.length_squared() > 0.001:
+		var direcao := evasao.normalized()
+		velocity.x = direcao.x * velocidade
+		velocity.z = direcao.z * velocidade
+		look_at(global_position + direcao, Vector3.UP)
+	else:
+		super._patrulhar_sem_bandeira()
+
 func _direcao_com_evasao(destino: Vector3) -> Vector3:
 	var direcao := destino - global_position
 	direcao.y = 0.0

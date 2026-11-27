@@ -14,6 +14,7 @@ var estado: Estado = Estado.BUSCANDO
 var bandeira_alvo: Node3D = null
 var bandeira_carregada: Node3D = null
 var offset_visual_bandeira: Vector3 = Vector3.ZERO
+var direcao_patrulha: float = 1.0
 
 func _ready() -> void:
 	var bandeiras := get_tree().root.find_child("bandeira", true, false)
@@ -54,7 +55,7 @@ func _physics_process(delta: float) -> void:
 		else:
 			cruzou_linha = z_anterior > 0.0 and global_position.z <= 0.0
 		if cruzou_linha:
-			bandeira_carregada.queue_free()
+			_registrar_entrega(bandeira_carregada)
 			bandeira_carregada = null
 			estado = Estado.BUSCANDO
 			bandeira_alvo = null
@@ -64,7 +65,7 @@ func _processar_busca() -> void:
 		_liberar_reserva(bandeira_alvo)
 		bandeira_alvo = _encontrar_bandeira()
 	if not is_instance_valid(bandeira_alvo):
-		_parar_movimento()
+		_patrulhar_sem_bandeira()
 		return
 
 	var destino := _obter_posicao_bandeira(bandeira_alvo)
@@ -96,6 +97,21 @@ func _mover_para(destino: Vector3) -> void:
 func _parar_movimento() -> void:
 	velocity.x = move_toward(velocity.x, 0.0, velocidade)
 	velocity.z = move_toward(velocity.z, 0.0, velocidade)
+
+func _patrulhar_sem_bandeira() -> void:
+	if global_position.x >= 10.5:
+		direcao_patrulha = -1.0
+	elif global_position.x <= -10.5:
+		direcao_patrulha = 1.0
+	velocity.x = direcao_patrulha * velocidade
+	velocity.z = 0.0
+
+func _registrar_entrega(bandeira: Node3D) -> void:
+	var gerenciador := bandeira.get_parent()
+	if gerenciador and gerenciador.has_method("capturar_bandeira"):
+		gerenciador.call("capturar_bandeira", bandeira)
+	else:
+		bandeira.queue_free()
 
 func _encontrar_bandeira() -> Node3D:
 	var no_bandeiras := get_tree().root.find_child("bandeira", true, false)
