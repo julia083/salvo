@@ -6,6 +6,15 @@
 [ext_resource type="Script" uid="uid://wbk2px0jdhyr" path="res://bot_3.gd" id="4_lquwl"]
 [ext_resource type="Script" uid="uid://bt2mitojrhaol" path="res://animaçaoperson.gd" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://ui3un44k443a" path="res://addons/flag/scene.gltf" id="5_lquwl"]
+<<<<<<< HEAD
+=======
+[ext_resource type="PackedScene" uid="uid://dnoendc1ssl0p" path="res://modelsp/animaçaoperson.glb" id="6_4c57u"]
+[ext_resource type="Script" uid="uid://b0jfg1o6v61lm" path="res://jogador_aux_2.gd" id="7_aux02"]
+[ext_resource type="Script" uid="uid://tuoleb80fbq7" path="res://equipe.gd" id="7_efxa6"]
+[ext_resource type="Script" uid="uid://dtokexgflllre" path="res://congelamento.gd" id="8_cong"]
+[ext_resource type="Script" path="res://gerenciador_bandeiras.gd" id="9_bandeiras"]
+[ext_resource type="Script" path="res://placar_bandeiras.gd" id="10_placar"]
+>>>>>>> origin/main
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xsfqu"]
 albedo_color = Color(0.21568628, 0.23921569, 0.019607844, 1)
@@ -169,14 +178,32 @@ material = SubResource("StandardMaterial3D_ojeok")
 [node name="jogadores" type="Node3D" parent="." unique_id=673646932]
 
 [node name="jogador_aux_1" type="CharacterBody3D" parent="jogadores" unique_id=2012810355]
+<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.841366, 1.5117397, 17.1435)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="jogadores/jogador_aux_1" unique_id=1591507109]
 mesh = SubResource("CapsuleMesh_ja7cm")
+=======
+transform = Transform3D(-0.9985868, 0, -0.05314578, 0, 1, 0, 0.05314578, 0, -0.9985868, 8.841366, 1.5117397, 21.5)
+script = ExtResource("1_efxa6")
+>>>>>>> origin/main
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="jogadores/jogador_aux_1" unique_id=1894419000]
 shape = SubResource("CapsuleShape3D_ja7cm")
 
+<<<<<<< HEAD
+=======
+[node name="Equipe" type="Node" parent="jogadores/jogador_aux_1" unique_id=747073011]
+script = ExtResource("7_efxa6")
+metadata/_custom_type_script = "uid://tuoleb80fbq7"
+
+[node name="andando" parent="jogadores/jogador_aux_1" unique_id=1070791560 instance=ExtResource("3_dg77c")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -0.8545041, 0)
+
+[node name="Congelamento" type="Node" parent="jogadores/jogador_aux_1" unique_id=2012810356]
+script = ExtResource("8_cong")
+
+>>>>>>> origin/main
 [node name="jogador_aux_2" type="CharacterBody3D" parent="jogadores" unique_id=758653922]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.8239, 1.8798547, 17.113796)
 
@@ -186,8 +213,42 @@ mesh = SubResource("CapsuleMesh_ojeok")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="jogadores/jogador_aux_2" unique_id=957563118]
 shape = SubResource("CapsuleShape3D_ojeok")
 
+<<<<<<< HEAD
 [node name="jogador_principal" parent="jogadores" unique_id=2053236187 instance=ExtResource("1_ig7tw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.63054895, 0.49616766, 17.023968)
+=======
+[node name="andando" parent="jogadores/jogador_aux_2" unique_id=2022924769 instance=ExtResource("3_dg77c")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -0.8646636, 0)
+
+[node name="Equipe" type="Node" parent="jogadores/jogador_aux_2" unique_id=1076499217]
+script = ExtResource("7_efxa6")
+metadata/_custom_type_script = "uid://tuoleb80fbq7"
+
+[node name="Congelamento" type="Node" parent="jogadores/jogador_aux_2" unique_id=758653923]
+script = ExtResource("8_cong")
+
+[node name="jogador_principal" parent="jogadores" unique_id=2053236187 instance=ExtResource("1_ig7tw")]
+transform = Transform3D(-0.99965596, 0, 0.026228368, 0, 1, 0, -0.026228368, 0, -0.99965596, 0.63054895, 0.49616766, 17.023968)
+
+[node name="Mesh" parent="jogadores/jogador_principal" index="0" unique_id=748284704]
+visible = false
+
+[node name="Collider" parent="jogadores/jogador_principal" index="1" unique_id=863497596]
+transform = Transform3D(0.20330688, 0, -0.97911507, 0, 1, 0, 0.97911507, 0, 0.20330688, 0, 0.9, 0)
+
+[node name="Head" parent="jogadores/jogador_principal" index="2" unique_id=1538567636]
+transform = Transform3D(-0.999206, 0, 0.039839737, 0, 1, 0, -0.039839737, 0, -0.999206, 0, 1.7, 0)
+
+[node name="Equipe" type="Node" parent="jogadores/jogador_principal" unique_id=414762747]
+script = ExtResource("7_efxa6")
+metadata/_custom_type_script = "uid://tuoleb80fbq7"
+
+[node name="animaçaoperson" parent="jogadores/jogador_principal" unique_id=410016758 instance=ExtResource("6_4c57u")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+
+[node name="Congelamento" type="Node" parent="jogadores/jogador_principal" unique_id=2053236188]
+script = ExtResource("8_cong")
+>>>>>>> origin/main
 
 [node name="bots" type="Node3D" parent="." unique_id=1201191231]
 
@@ -201,6 +262,20 @@ mesh = SubResource("CapsuleMesh_lkbxi")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bots/bot2" unique_id=1798401541]
 shape = SubResource("CapsuleShape3D_lkbxi")
 
+<<<<<<< HEAD
+=======
+[node name="andandoBot2" parent="bots/bot2" unique_id=698990158 instance=ExtResource("3_dg77c")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -0.7172847, 0)
+
+[node name="Equipe" type="Node" parent="bots/bot2" unique_id=1303516920]
+script = ExtResource("7_efxa6")
+time = 1
+metadata/_custom_type_script = "uid://tuoleb80fbq7"
+
+[node name="Congelamento" type="Node" parent="bots/bot2" unique_id=1586176700]
+script = ExtResource("8_cong")
+
+>>>>>>> origin/main
 [node name="bot3" type="CharacterBody3D" parent="bots" unique_id=1077571945]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3346076, 1.7948885, -17.507137)
 script = ExtResource("4_lquwl")
@@ -211,11 +286,29 @@ mesh = SubResource("CapsuleMesh_xsfqu")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="bots/bot3" unique_id=86099958]
 shape = SubResource("CapsuleShape3D_xsfqu")
 
+<<<<<<< HEAD
+=======
+[node name="andandoBot3" parent="bots/bot3" unique_id=1106648790 instance=ExtResource("6_4c57u")]
+transform = Transform3D(-0.9916926, 0, -0.12863043, 0, 1, 0, 0.12863043, 0, -0.9916926, 0, -0.70455885, 0)
+
+[node name="Equipe" type="Node" parent="bots/bot3" unique_id=951531452]
+script = ExtResource("7_efxa6")
+time = 1
+
+[node name="Congelamento" type="Node" parent="bots/bot3" unique_id=1077571946]
+script = ExtResource("8_cong")
+
+>>>>>>> origin/main
 [node name="bot1" parent="bots" unique_id=1942468232 instance=ExtResource("4_7mycd")]
 transform = Transform3D(-1.3394216, 0, -0.26212442, 0, 1.3648295, 0, 0.26212442, 0, -1.3394216, 0, 0, -18.862993)
 script = ExtResource("5_272bh")
 
 [node name="bandeira" type="Node3D" parent="." unique_id=374513203]
+<<<<<<< HEAD
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.3006525, -2.8454766, 0)
+script = ExtResource("9_bandeiras")
+>>>>>>> origin/main
 
 [node name="flag1" parent="bandeira" unique_id=1663578617 instance=ExtResource("5_lquwl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.310092, 7.394857, 23.475954)
@@ -265,6 +358,7 @@ transform = Transform3D(0.9739835, 0.18845166, 0.12586561, -0.027992915, -0.4511
 [node name="luz_time_bots" type="DirectionalLight3D" parent="." unique_id=818042863]
 transform = Transform3D(0.920338, -0.3903039, 0.025318906, 0.27436545, 0.6903786, 0.6694033, -0.27875033, -0.6091307, 0.74246764, 0, 10.605663, 23.915485)
 
+<<<<<<< HEAD
 [node name="Cenario" type="CSGCombiner3D" parent="." unique_id=26825655]
 
 [node name="CSGBox3D5" type="CSGBox3D" parent="Cenario" unique_id=942514954]
@@ -383,5 +477,21 @@ transform = Transform3D(-0.0080127595, 0, -0.999968, 0, 1, 0, 0.999968, 0, -0.00
 polygon = PackedVector2Array(-1.3722305, 1.4321902, -0.91441154, 2.1108484, 2.906046, 2.7812393, 3.0230637, 1.0965579)
 depth = 53.32
 material = SubResource("StandardMaterial3D_iyngt")
+=======
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("10_placar")
+
+[node name="Placar" type="RichTextLabel" parent="HUD"]
+anchor_right = 1.0
+offset_top = 12.0
+offset_bottom = 62.0
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+mouse_filter = 2
+horizontal_alignment = 1
+vertical_alignment = 1
+text = "[center][font_size=26][b][color=#ff5555]VERMELHO: 0[/color]    [color=#6699ff]AZUL: 0[/color][/b][/font_size][/center]"
+>>>>>>> origin/main
 
 [editable path="jogadores/jogador_principal"]
