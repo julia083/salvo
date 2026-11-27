@@ -103,7 +103,7 @@ material = SubResource("StandardMaterial3D_ojeok")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2525997, 0, 0)
 
 [node name="jogador_aux_1" type="CharacterBody3D" parent="jogadores" unique_id=2012810355]
-transform = Transform3D(-0.9985868, 0, -0.05314578, 0, 1, 0, 0.05314578, 0, -0.9985868, 8.841366, 1.5117397, 17.1435)
+transform = Transform3D(-0.9985868, 0, -0.05314578, 0, 1, 0, 0.05314578, 0, -0.9985868, 8.841366, 1.5117397, 21.5)
 script = ExtResource("1_efxa6")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="jogadores/jogador_aux_1" unique_id=1894419000]
@@ -114,7 +114,7 @@ script = ExtResource("7_efxa6")
 metadata/_custom_type_script = "uid://tuoleb80fbq7"
 
 [node name="andando" parent="jogadores/jogador_aux_1" unique_id=1070791560 instance=ExtResource("3_dg77c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8545041, 0)
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -0.8545041, 0)
 
 [node name="Congelamento" type="Node" parent="jogadores/jogador_aux_1" unique_id=2012810356]
 script = ExtResource("8_cong")
@@ -127,7 +127,7 @@ script = ExtResource("7_aux02")
 shape = SubResource("CapsuleShape3D_ojeok")
 
 [node name="andando" parent="jogadores/jogador_aux_2" unique_id=2022924769 instance=ExtResource("3_dg77c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.8646636, 0)
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -0.8646636, 0)
 
 [node name="Equipe" type="Node" parent="jogadores/jogador_aux_2" unique_id=1076499217]
 script = ExtResource("7_efxa6")
@@ -153,6 +153,7 @@ script = ExtResource("7_efxa6")
 metadata/_custom_type_script = "uid://tuoleb80fbq7"
 
 [node name="animaçaoperson" parent="jogadores/jogador_principal" unique_id=410016758 instance=ExtResource("6_4c57u")]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
 
 [node name="Congelamento" type="Node" parent="jogadores/jogador_principal" unique_id=2053236188]
 script = ExtResource("8_cong")
@@ -169,7 +170,7 @@ transform = Transform3D(-0.98475087, 0, 0.17397043, 0, 1, 0, -0.17397043, 0, -0.
 shape = SubResource("CapsuleShape3D_lkbxi")
 
 [node name="andandoBot2" parent="bots/bot2" unique_id=698990158 instance=ExtResource("3_dg77c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7172847, 0)
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, -0.7172847, 0)
 
 [node name="Equipe" type="Node" parent="bots/bot2" unique_id=1303516920]
 script = ExtResource("7_efxa6")
@@ -188,7 +189,7 @@ transform = Transform3D(-0.92599934, 0, -0.37752518, 0, 1, 0, 0.37752518, 0, -0.
 shape = SubResource("CapsuleShape3D_xsfqu")
 
 [node name="andandoBot3" parent="bots/bot3" unique_id=1106648790 instance=ExtResource("6_4c57u")]
-transform = Transform3D(0.9916926, 0, 0.12863043, 0, 1, 0, -0.12863043, 0, 0.9916926, 0, -0.70455885, 0)
+transform = Transform3D(-0.9916926, 0, -0.12863043, 0, 1, 0, 0.12863043, 0, -0.9916926, 0, -0.70455885, 0)
 
 [node name="Equipe" type="Node" parent="bots/bot3" unique_id=951531452]
 script = ExtResource("7_efxa6")
