@@ -1,9 +1,11 @@
 extends Node3D
 
 signal placar_atualizado(pontuacao_vermelha: int, pontuacao_azul: int)
+signal vitoria_declarada(equipe_vencedora: String)
 
 var pontuacao_vermelha: int = 0
 var pontuacao_azul: int = 0
+var partida_encerrada: bool = false
 
 func capturar_bandeira(bandeira: Node3D) -> void:
 	if not is_instance_valid(bandeira):
@@ -27,3 +29,12 @@ func capturar_bandeira(bandeira: Node3D) -> void:
 		corpo.collision_layer = 0
 		corpo.collision_mask = 0
 	bandeira.queue_free()
+
+	if not partida_encerrada and pontuacao_vermelha >= 3:
+		partida_encerrada = true
+		vitoria_declarada.emit("VERMELHA")
+		get_tree().paused = true
+	elif not partida_encerrada and pontuacao_azul >= 3:
+		partida_encerrada = true
+		vitoria_declarada.emit("AZUL")
+		get_tree().paused = true

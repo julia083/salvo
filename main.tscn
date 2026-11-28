@@ -155,7 +155,7 @@ script = ExtResource("7_efxa6")
 metadata/_custom_type_script = "uid://tuoleb80fbq7"
 
 [node name="animaçaoperson" parent="jogadores/jogador_principal" unique_id=410016758 instance=ExtResource("6_4c57u")]
-transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 
 [node name="Congelamento" type="Node" parent="jogadores/jogador_principal" unique_id=2053236188]
 script = ExtResource("8_cong")
@@ -270,6 +270,7 @@ transform = Transform3D(0.920338, -0.3903039, 0.025318906, 0.27436545, 0.6903786
 
 [node name="HUD" type="CanvasLayer" parent="."]
 script = ExtResource("10_placar")
+process_mode = 3
 
 [node name="Placar" type="RichTextLabel" parent="HUD"]
 anchor_right = 1.0
@@ -282,5 +283,47 @@ mouse_filter = 2
 horizontal_alignment = 1
 vertical_alignment = 1
 text = "[center][font_size=26][b][color=#ff5555]VERMELHO: 0[/color]    [color=#6699ff]AZUL: 0[/color][/b][/font_size][/center]"
+
+[node name="TelaVitoria" type="PanelContainer" parent="HUD"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -110.0
+offset_right = 260.0
+offset_bottom = 110.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Conteudo" type="VBoxContainer" parent="HUD/TelaVitoria"]
+layout_mode = 2
+theme_override_constants/separation = 18
+
+[node name="Mensagem" type="Label" parent="HUD/TelaVitoria/Conteudo"]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 2
+theme_override_font_sizes/font_size = 28
+text = "VITÓRIA DA EQUIPE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Botoes" type="HBoxContainer" parent="HUD/TelaVitoria/Conteudo"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Reiniciar" type="Button" parent="HUD/TelaVitoria/Conteudo/Botoes"]
+custom_minimum_size = Vector2(150, 48)
+layout_mode = 2
+text = "Reiniciar"
+
+[node name="Encerrar" type="Button" parent="HUD/TelaVitoria/Conteudo/Botoes"]
+custom_minimum_size = Vector2(150, 48)
+layout_mode = 2
+text = "Encerrar jogo"
 
 [editable path="jogadores/jogador_principal"]
